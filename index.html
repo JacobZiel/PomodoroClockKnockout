@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="icon" href="./pomodoro.png" type="image/x-icon" />
+   <link rel="stylesheet" type="text/css" href="./main.css">
+   <title>Pomodoro Clock</title>
+</head>
+<body>
+   <div class="container" ">
+      <div id="mainDiv">
+         <h1 strong data-bind="text: title" ></h1>
+         <img class="pomodoro" src="./pomodoro.png">
+         <div id="timeDiv">
+         <h1 strong data-bind="text: timerMain" id="timer"></h1>
+         <p data-bind="visible: messageWork">&nbsp;&nbsp;MIN</p>
+      </div>
+         <button  onclick="notifyMe()" data-bind="click: startTime, enable: canSubmit, text: startButton"></button>
+         <button data-bind="click: resetFunc, text: resetButton"></button>
+         <p strong data-bind="text: work"></p>
+         <button data-bind="click: addTimeToWork, enable: canSubmit, text: plusButton"></button>
+         <button data-bind="click: takeTimeToWork, enable: canSubmit, text: minusButton"></button>
+     <div id="timeDiv">
+         <h1 strong data-bind="text: timerBreak" id="breakTime"></h1>
+         <p data-bind="visible: messageBreak">&nbsp;&nbsp;MIN</p>
+      </div>
+         <p strong data-bind="text: breaks"></p>
+         <button data-bind="click: addBreakTime, enable: canSubmit, text: plusButton"></button>
+         <button data-bind="click: takeBreakTime, enable: canSubmit, text: minusButton"></button>
+         
+      </div>
+   </div>
+      <div id="creditsDiv">   
+        <p class="creditsSign"data-bind="text: credits"></p>
+         <img class="credits" src="./mug-hot-solid.svg">
+      </div>
+         
+   <script src="./knockout-3.5.0.js"></script>
+   <script src="./app.js"></script>
+</body>
+</html>
